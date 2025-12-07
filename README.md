@@ -44,7 +44,7 @@
 ### **2\. 初始化项目**
 
 打开终端 (Terminal / CMD / PowerShell)，执行以下命令：
-
+```
 \# 1\. 创建 Vite 项目 (选择 React)  
 npm create vite@latest handwritten-notes \-- \--template react
 
@@ -56,18 +56,18 @@ npm install
 
 \# 4\. 安装图标库  
 npm install lucide-react
-
+```
 ### **3\. 安装与配置 Tailwind CSS (关键步骤)**
 
 为了避免版本冲突，请手动安装适配器包，并手动创建配置文件。
 
 **3.1 安装依赖**
-
+```
 npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
-
+```
 3.2 创建配置文件 (手动创建，不要用命令)  
 在项目根目录 (handwritten-notes/) 下，新建以下两个文件并填入对应内容：
-
+```
 * **文件 1: tailwind.config.js**  
   /\*\* @type {import('tailwindcss').Config} \*/  
   export default {  
@@ -80,7 +80,8 @@ npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
     },  
     plugins: \[\],  
   }
-
+```
+```
 * **文件 2: postcss.config.js**  
   export default {  
     plugins: {  
@@ -88,12 +89,15 @@ npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
       autoprefixer: {},  
     },  
   }
-
+```
 3.3 引入样式  
 打开 src/index.css，清空所有内容，仅保留以下三行：  
+```
 @tailwind base;  
 @tailwind components;  
 @tailwind utilities;
+```
+**也可以直接下载**
 
 ### **4\. 植入核心代码**
 
@@ -103,9 +107,9 @@ npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
 4. 保存文件。
 
 ### **5\. 启动项目**
-
+```
 npm run dev
-
+```
 终端将显示访问地址（通常是 http://localhost:5173），在浏览器打开即可使用。
 
 ## **📖 使用说明 (Usage)**
@@ -128,5 +132,4 @@ npm run dev
 欢迎提交 Issue 或 Pull Request 来改进笔迹算法或添加更多纸张预设！
 
 ## **📄 开源协议 (License)**
-
 MIT License
