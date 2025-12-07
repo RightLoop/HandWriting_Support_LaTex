@@ -1,0 +1,2 @@
+# HandWriting_Support_LaTex
+减少理工科大学生重复抄写的任务负担
