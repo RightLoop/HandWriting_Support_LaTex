@@ -39,59 +39,79 @@
 
 确保您的电脑已安装 **Node.js** (推荐 v18 或更高版本)。
 
-* 检查命令: node \-v
+* 检查命令:
+```
+node -v
+```
 
 ### **2\. 初始化项目**
 
 打开终端 (Terminal / CMD / PowerShell)，执行以下命令：
-```
+
 \# 1\. 创建 Vite 项目 (选择 React)  
-npm create vite@latest handwritten-notes \-- \--template react
+
+```
+npm create vite@latest handwritten-notes -- --template react
+```
 
 \# 2\. 进入项目目录  
+
+```
 cd handwritten-notes
+```
 
 \# 3\. 安装核心依赖  
+
+```
 npm install
+```
 
 \# 4\. 安装图标库  
+
+```
 npm install lucide-react
 ```
+
 ### **3\. 安装与配置 Tailwind CSS (关键步骤)**
 
 为了避免版本冲突，请手动安装适配器包，并手动创建配置文件。
 
 **3.1 安装依赖**
+
 ```
-npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
+npm install -D tailwindcss postcss autoprefixer @tailwindcss/postcss
 ```
+
 3.2 创建配置文件 (手动创建，不要用命令)  
 在项目根目录 (handwritten-notes/) 下，新建以下两个文件并填入对应内容：
+
+* **文件 1: ```tailwind.config.js```**
 ```
-* **文件 1: tailwind.config.js**  
-  /\*\* @type {import('tailwindcss').Config} \*/  
-  export default {  
-    content: \[  
-      "./index.html",  
-      "./src/\*\*/\*.{js,ts,jsx,tsx}",  
-    \],  
-    theme: {  
-      extend: {},  
-    },  
-    plugins: \[\],  
-  }
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 ```
+
+
+* **文件 2: ```postcss.config.js```**
 ```
-* **文件 2: postcss.config.js**  
-  export default {  
-    plugins: {  
-      '@tailwindcss/postcss': {},  
-      autoprefixer: {},  
-    },  
-  }
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+    autoprefixer: {},
+  },
+}
 ```
 3.3 引入样式  
-打开 src/index.css，清空所有内容，仅保留以下三行：  
+打开 ```src/index.css```，清空所有内容，仅保留以下三行：  
 ```
 @tailwind base;  
 @tailwind components;  
@@ -101,22 +121,22 @@ npm install \-D tailwindcss postcss autoprefixer @tailwindcss/postcss
 
 ### **4\. 植入核心代码**
 
-1. 打开 src/App.jsx。  
+1. 打开 ```src/App.jsx```。  
 2. 清空文件内容。  
-3. 将项目提供的完整 HandwrittenNotes.jsx 代码复制粘贴进去。  
+3. 将项目提供的完整 ```HandwrittenNotes.jsx``` 代码复制粘贴进去。  
 4. 保存文件。
 
 ### **5\. 启动项目**
 ```
 npm run dev
 ```
-终端将显示访问地址（通常是 http://localhost:5173），在浏览器打开即可使用。
+终端将显示访问地址（通常是 ```http://localhost:5173```），在浏览器打开即可使用。
 
 ## **📖 使用说明 (Usage)**
 
 1. **输入内容**: 左侧输入框支持 Markdown 文本和 LaTeX 公式。  
-   * 行内公式: $ E \= mc^2 $  
-   * 块级公式: $$ \\int\_0^\\infty f(x) dx $$  
+   * 行内公式: ```$ E \= mc^2 $```  
+   * 块级公式: ```$$ \\int\_0^\\infty f(x) dx $$```  
 2. **调整样式**:  
    * 拖动“潦草程度”滑块改变字迹抖动幅度。  
    * 点击“字体设置”选择预设或上传自己的字体文件（推荐使用手写风格字体）。  
